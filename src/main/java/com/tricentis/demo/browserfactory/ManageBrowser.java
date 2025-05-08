@@ -1,6 +1,5 @@
 package com.tricentis.demo.browserfactory;
 
-import com.tricentis.demo.propertyreader.PropertyReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -15,9 +14,7 @@ public class ManageBrowser {
 
     public static WebDriver driver;
 
-    String baseUrl = PropertyReader.getInstance().getProperty("baseUrl");
-
-    int implicitWait = Integer.parseInt(PropertyReader.getInstance().getProperty("implicitWait"));
+    String baseUrl = "https://demowebshop.tricentis.com/";
 
     public void selectBrowser(String browser){
         if (browser.equalsIgnoreCase("chrome")) {
@@ -30,7 +27,7 @@ public class ManageBrowser {
             System.out.println("Wrong browser name");
         }
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get(baseUrl);
     }
 
