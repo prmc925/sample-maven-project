@@ -2,6 +2,7 @@ package com.tricentis.demo.pages;
 
 import com.tricentis.demo.utilities.Utility;
 import org.openqa.selenium.By;
+import org.testng.Reporter;
 
 /**
  * Created by Jay Vaghani
@@ -15,18 +16,22 @@ public class LoginPage extends Utility {
     By errorMessage = By.xpath("//div[@class = 'validation-summary-errors']");
 
     public String getWelcomeText() {
+        Reporter.log("Getting welcome text <br>");
         return getTextFromElement(welcomeText);
     }
 
     public void enterEmailId(String email) {
+        Reporter.log("Enter email " + email + " to email field " + emailField.toString() + "<br>");
         sendTextToElement(emailField, email);
     }
 
     public void enterPassword(String password) {
+        Reporter.log("Enter password " + password + " to password field " + passwordField.toString() + "<br>");
         sendTextToElement(passwordField, password);
     }
 
     public void clickOnLoginButton() {
+        Reporter.log("Clicking on Login Button " + loginButton.toString() + "<br> ");
         clickOnElement(loginButton);
     }
 

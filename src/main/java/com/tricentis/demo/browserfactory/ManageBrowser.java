@@ -16,7 +16,7 @@ public class ManageBrowser {
 
     String baseUrl = "https://demowebshop.tricentis.com/";
 
-    public void selectBrowser(String browser){
+    public void selectBrowser(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
@@ -31,8 +31,8 @@ public class ManageBrowser {
         driver.get(baseUrl);
     }
 
-    public void closeBrowser(){
-        if (driver != null){
+    public void closeBrowser() {
+        if (driver != null) {
             driver.quit();
         }
     }

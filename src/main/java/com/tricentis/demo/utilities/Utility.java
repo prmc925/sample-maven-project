@@ -25,7 +25,7 @@ public class Utility extends ManageBrowser {
         loginLink.click();
     }
 
-    public void clickOnElement(WebElement element){
+    public void clickOnElement(WebElement element) {
         element.click();
     }
 

@@ -11,12 +11,12 @@ public class BaseTest extends Utility {
 
     String browser = "chrome";
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp(){
         selectBrowser(browser);
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(){
         closeBrowser();
     }
